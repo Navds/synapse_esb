@@ -1,4 +1,4 @@
-# High availability middleware: Rabbitmq + Talend ESB
+# High availability middlewares infrastructure: Rabbitmq + Talend ESB
 # @project SYNAPSE
 # @author Navalona R. <n.ramanantoanina@etechconsulting-mg.com>
 # March, 2019
@@ -14,5 +14,6 @@ services:
         ports:
             - "8080:15672"
         volumes:
+            - ./config/rabbit:/etc/rabbitmq
             - ./persistence/rabbit:/var/lib/rabbitmq
 
