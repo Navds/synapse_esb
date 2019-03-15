@@ -1,0 +1,18 @@
+# High availability middleware: Rabbitmq + Talend ESB
+# @project SYNAPSE
+# @author Navalona R. <n.ramanantoanina@etechconsulting-mg.com>
+# March, 2019
+
+version: '3'
+
+services:
+    rabbit:
+        image: rabbitmq:3-management-alpine
+        environment:
+            - RABBITMQ_DEFAULT_USER=bugs
+            - RABBITMQ_DEFAULT_PASS=bunny
+        ports:
+            - "8080:15672"
+        volumes:
+            - ./persistence/rabbit:/var/lib/rabbitmq
+
